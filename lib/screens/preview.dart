@@ -43,34 +43,17 @@ class _PreviewScrState extends State<PreviewScr> {
                   var str = results[m].split('->');
                   return Container(
                       decoration: BoxDecoration(
-                        color: '(' +
-                                    (index -
-                                            alltasks[m].size *
-                                                (index ~/ alltasks[m].size))
-                                        .toString() +
-                                    ',' +
+                        color: '(' + (index - alltasks[m].size * (index ~/ alltasks[m].size))
+                                        .toString() +',' +
                                     (index ~/ alltasks[m].size).toString() +
-                                    ')' ==
-                                str[0]
-                            ? Color.fromRGBO(100, 255, 218, 1)
-                            : '(' +
-                                        (index -
-                                                alltasks[m].size *
-                                                    (index ~/ alltasks[m].size))
-                                            .toString() +
-                                        ',' +
-                                        (index ~/ alltasks[m].size).toString() +
-                                        ')' ==
-                                    str[str.length - 1]
+                                    ')' == str[0] ? Color.fromRGBO(100, 255, 218, 1)  : '(' +
+                                        (index - alltasks[m].size * (index ~/ alltasks[m].size)).toString()+
+                                        ',' + (index ~/ alltasks[m].size).toString() +
+                                        ')' == str[str.length - 1]
                                 ? Color.fromRGBO(0, 150, 136, 1)
                                 : results[m].contains('(' +
-                                        (index -
-                                                alltasks[m].size *
-                                                    (index ~/ alltasks[m].size))
-                                            .toString() +
-                                        ',' +
-                                        (index ~/ alltasks[m].size).toString() +
-                                        ')')
+                                        (index - alltasks[m].size * (index ~/ alltasks[m].size)).toString() +',' +
+                                        (index ~/ alltasks[m].size).toString() +')')
                                     ? Color.fromRGBO(76, 175, 80, 1)
                                     : alltasks[m].blackpoints.contains(index)
                                         ? Colors.black
@@ -81,14 +64,8 @@ class _PreviewScrState extends State<PreviewScr> {
                       ),
                       child: Center(
                         child: Text(
-                          '(' +
-                              (index -
-                                      alltasks[m].size *
-                                          (index ~/ alltasks[m].size))
-                                  .toString() +
-                              ',' +
-                              (index ~/ alltasks[m].size).toString() +
-                              ')',
+                          '(' +(index - alltasks[m].size *(index ~/ alltasks[m].size)).toString() +
+                              ',' +(index ~/ alltasks[m].size).toString() +')',
                           style: TextStyle(
                             color: alltasks[m].blackpoints.contains(index)
                                 ? Colors.white
